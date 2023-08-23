@@ -86,7 +86,7 @@ fun HomeScreen(
             Spacer(Modifier.height(15.dp))
             Divider()
         }
-        /*Lista de produtos*/
+        /*Lista de produtos aqui*/
 
         ShowCart()
         NavigationMenu(selectedItem = selectedItem)
