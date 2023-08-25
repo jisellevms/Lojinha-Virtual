@@ -36,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
     buildFeatures {
         compose = true
     }
@@ -68,4 +71,11 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("androidx.navigation:navigation-compose:2.5.3")
     implementation("androidx.compose.material:material:1.4.2")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.2.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation ("io.insert-koin:koin-android:3.4.3")
+    implementation("androidx.compose.runtime:runtime-livedata:1.3.3")
+    implementation("io.coil-kt:coil-compose:2.4.0")
 }

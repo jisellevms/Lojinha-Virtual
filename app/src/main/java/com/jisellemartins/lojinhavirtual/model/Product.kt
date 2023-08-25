@@ -1,13 +1,15 @@
 package com.jisellemartins.lojinhavirtual.model
 
+import com.google.gson.annotations.SerializedName
+
 class Product (
-    val id: String,
-    val category: String,
-    val title: String,
-    val description: String,
-    val price: Float,
-    val discount: Boolean,
-    val percentDiscount: Int,
-    val imageUrl: String
+    @SerializedName("id") val id: String,
+    @SerializedName("category") val category: String,
+    @SerializedName("title") val title: String,
+    @SerializedName("description") val description: String,
+    @SerializedName("price") val price: Float,
+    @SerializedName("discount") val discount: Boolean,
+    @SerializedName("percentDiscount") val percentDiscount: Int,
+    @SerializedName("imageURL") val imageUrl: String
 )
 
