@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import com.jisellemartins.lojinhavirtual.R
 import com.jisellemartins.lojinhavirtual.data.listCategories
 import com.jisellemartins.lojinhavirtual.model.CategoryModel
+import com.jisellemartins.lojinhavirtual.utils.quicksand
 
 @Composable
 fun CategoryList(){
@@ -45,7 +46,7 @@ fun Category(category:CategoryModel){
         Box(
             Modifier
                 .background(Transparent, CircleShape)
-                .padding(horizontal = 9.dp),
+                .padding(horizontal = 18.dp),
             contentAlignment = Alignment.Center
         ){
             Image(
@@ -61,7 +62,7 @@ fun Category(category:CategoryModel){
                 colorFilter = ColorFilter.tint( colorResource(id = R.color.purple))
             )
             Icon(
-                painter = painterResource(category.icon),
+                painter = painterResource(R.drawable.caminhas),
                 contentDescription = "",
                 Modifier
                     .width(25.dp)
@@ -73,7 +74,9 @@ fun Category(category:CategoryModel){
         }
         Text(text = category.category,
             color = colorResource(id = R.color.purple),
-            fontWeight = FontWeight.Bold)
+            fontWeight = FontWeight.Bold, fontFamily = quicksand,)
+
+
 
     }
 }
@@ -86,6 +89,6 @@ fun showListCategories(){
 @Preview(showBackground = true)
 @Composable
 fun showCategory(){
-    Category(CategoryModel("Cama", R.drawable.group))
+    Category(CategoryModel("Cama", "",0, emptyList()))
 
 }
