@@ -19,7 +19,10 @@ A lojinha virtual foi contruida para atender a necessidade de um cliente que já
 
 
 ## Demonstração
-<p align="center">
-<img src="app/src/main/assets/circle.png" alt="Lojinha Virtual" >
-</p>
+
+<div align="center">
+<img src="tela-1.png" alt="Lojinha Virtual" width="300">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+<img src="tela-2.png" alt="Lojinha Virtual" width="300">
+</div>
 
