@@ -2,6 +2,7 @@ package com.jisellemartins.lojinhavirtual.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -58,6 +59,7 @@ fun BottomAddProduct(product: Product) {
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center
             ) {
+                var count = 1
                 Box(Modifier.padding(0.dp)) {
                     Icon(
                         painterResource(id = R.drawable.vector__4_),
@@ -67,7 +69,7 @@ fun BottomAddProduct(product: Product) {
                         )
                 }
                 Text(
-                    text = "1",
+                    text = count.toString(),
                     modifier = Modifier.padding(start = 15.dp, end = 15.dp),
                     color = Color.Black,
                     fontFamily = quicksand,
@@ -75,7 +77,8 @@ fun BottomAddProduct(product: Product) {
                     fontSize = 14.sp,
                     textAlign = TextAlign.Center
                 )
-                Box(Modifier.padding(0.dp))
+
+                Box(Modifier.padding(0.dp).clickable{ count++})
                 {
                     Icon(
                         Icons.Default.Add,
