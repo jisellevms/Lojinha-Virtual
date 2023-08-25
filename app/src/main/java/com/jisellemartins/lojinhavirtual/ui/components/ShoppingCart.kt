@@ -27,7 +27,7 @@ fun ShowCart(){
         horizontalArrangement = Arrangement.SpaceBetween) {
         Icon(modifier = Modifier.padding(10.dp), painter = painterResource(id = R.drawable.vector__3_), contentDescription = "", tint = Color.White)
         Text(modifier = Modifier.padding(10.dp), text = "Ver Carrinho", color = Color.White)
-        Text(modifier = Modifier.padding(10.dp), text = "R$ 450,00", color = Color.White)
+        Text(modifier = Modifier.padding(10.dp), text = "R$ 0,00", color = Color.White)
     }
 }
 

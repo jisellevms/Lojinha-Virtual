@@ -5,6 +5,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -29,14 +30,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jisellemartins.lojinhavirtual.R
+import com.jisellemartins.lojinhavirtual.model.Product
+import com.jisellemartins.lojinhavirtual.utils.discountCalc
 import com.jisellemartins.lojinhavirtual.utils.quicksand
 
 @Composable
-fun BottomAddProduct() {
-    BottomNavigation(backgroundColor = Color.White) {
+fun BottomAddProduct(product: Product) {
+    BottomNavigation(backgroundColor = Color.White, modifier = Modifier.height(70.dp)) {
         Row(
             Modifier
                 .fillMaxWidth()
+                .fillMaxHeight()
                 .padding(start = 25.dp, end = 25.dp, top = 5.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
@@ -81,32 +85,44 @@ fun BottomAddProduct() {
                         )
                 }
             }
-
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier.width(189.dp),
-                colors = ButtonDefaults.buttonColors(
-                    backgroundColor = colorResource(
-                        id = R.color.purple
-                    )
-                )
+            Row(
+                Modifier.align(alignment = Alignment.CenterVertically),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
             ) {
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(
-                        text = "Adicionar", color = Color.White,
-                        fontFamily = quicksand,
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 14.sp
+                Button(
+                    onClick = { /*TODO*/ },
+                    modifier = Modifier.width(189.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = colorResource(
+                            id = R.color.purple
+                        )
                     )
-                    Text(
-                        text = "R$ 130,60", color = Color.White,
-                        fontFamily = quicksand,
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 14.sp
-                    )
-                }
+                ) {
+                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                        Text(
+                            text = "Adicionar", color = Color.White,
+                            fontFamily = quicksand,
+                            fontWeight = FontWeight.Medium,
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = "R$" + discountCalc(
+                                product.discount,
+                                product.price,
+                                product.percentDiscount
+                            ),
+                            color = Color.White,
+                            fontFamily = quicksand,
+                            fontWeight = FontWeight.Medium,
+                            fontSize = 14.sp
+                        )
+                    }
 
+                }
             }
+
+
         }
     }
 }
@@ -114,5 +130,5 @@ fun BottomAddProduct() {
 @Preview
 @Composable
 fun ShowBottomAddProduct() {
-    BottomAddProduct()
+    BottomAddProduct(productTest)
 }

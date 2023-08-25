@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.jisellemartins.lojinhavirtual.R
+import com.jisellemartins.lojinhavirtual.model.Product
 import com.jisellemartins.lojinhavirtual.utils.quicksand
 
 @Composable
@@ -29,7 +30,7 @@ fun TitleProductDetails() {
     Column(
         Modifier
             .background(colorResource(id = R.color.purple))
-            .height(88.dp)
+            .height(70.dp)
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center

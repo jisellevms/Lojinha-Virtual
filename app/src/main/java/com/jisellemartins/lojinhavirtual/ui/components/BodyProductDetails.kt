@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -23,30 +24,29 @@ import com.jisellemartins.lojinhavirtual.R
 import com.jisellemartins.lojinhavirtual.utils.quicksand
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
+import com.jisellemartins.lojinhavirtual.model.Product
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BodyProductDetails() {
+fun BodyProductDetails(product: Product) {
     Column {
         Column(Modifier.padding(start = 25.dp, end = 25.dp, top = 10.dp)) {
             Text(
-                text = "Cama Londres Azul - Chicxs", color = colorResource(id = R.color.purple),
+                text = product.title, color = colorResource(id = R.color.purple),
                 fontFamily = quicksand,
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp
             )
             Spacer(modifier = Modifier.height(15.dp))
             Text(
-                text = "- Cuidados com a Cama para Cachorro Londres Bichinho Chic Azul.\n" +
-                        "- Mantenha a caminha do seu pet sempre limpa e higienizada.\n" +
-                        "- Escolha o tamanho da caminha de acordo com o porte do seu cachorro ou gato.\n",
+                text = product.description,
                 fontFamily = quicksand,
                 fontWeight = FontWeight.Medium,
                 fontSize = 14.sp,
                 color = Color.Black
             )
         }
-
+        Spacer(modifier = Modifier.size(20.dp))
         Column(
             Modifier
                 .fillMaxWidth()
@@ -92,5 +92,5 @@ fun BodyProductDetails() {
 @Preview
 @Composable
 fun ShowBodyProductDetails() {
-    BodyProductDetails()
+    BodyProductDetails(productTest)
 }

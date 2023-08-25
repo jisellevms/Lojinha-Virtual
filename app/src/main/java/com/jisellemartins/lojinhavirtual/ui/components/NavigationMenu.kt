@@ -14,7 +14,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jisellemartins.lojinhavirtual.data.itemsNavBar
-import com.jisellemartins.lojinhavirtual.ui.screens.import.HomeScreen
 
 @Composable
 fun NavigationMenu(selectedItem:Int){

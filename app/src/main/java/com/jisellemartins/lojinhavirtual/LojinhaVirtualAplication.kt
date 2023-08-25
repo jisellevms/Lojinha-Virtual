@@ -1,4 +1,18 @@
 package com.jisellemartins.lojinhavirtual
 
-class LojinhaVirtualAplication {
+import android.app.Application
+import com.jisellemartins.lojinhavirtual.di.moduleGlobal
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.GlobalContext.startKoin
+
+class LojinhaVirtualAplication : Application(){
+    override fun onCreate() {
+        super.onCreate()
+        startKoin{
+            androidLogger()
+            androidContext(this@LojinhaVirtualAplication)
+            modules(moduleGlobal)
+        }
+    }
 }
